@@ -7,7 +7,8 @@
     <link rel="stylesheet" href="../../../public/css/login.css">
 </head>
 <body>
-    <div class="contenedorLogin">
+    <div class="cajota">
+        <div class="contenedorLogin">
         <div class="logoLibro">📚</div>
         
         <h1 class="tituloLogin">BIBLIONLINE</h1>
@@ -33,7 +34,9 @@
             <p class="textoRegistro">¿Ya tienes cuenta? <a href="#" onclick="history.back(); return false;" class="enlaceRegistro">Inicia sesión aquí</a></p>
             <a href="../../../index.php" class="enlaceVolver">← Volver al inicio</a>
         </div>
+        </div>
     </div>
+    
 
 </body>
 </html>

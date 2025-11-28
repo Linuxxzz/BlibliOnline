@@ -35,9 +35,21 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Función para cerrar sesión con validaciones completas
+    // Función para cerrar sesión con validaciones completas (solo administradores)
 async function cerrarSesion() {
     try {
+        // Verificar que el usuario sea administrador
+        const usuarioActualStorage = localStorage.getItem('usuarioActual');
+        if (!usuarioActualStorage) {
+            alert('Error: No se encontró información del usuario');
+            return;
+        }
+        
+        const datosUsuario = JSON.parse(usuarioActualStorage);
+        if (datosUsuario.tipo_usuario !== 'administrador') {
+            return;
+        }
+
         if (!confirm('¿Está seguro de que desea cerrar sesión?')) return;
 
         const datosLogout = { csrf_token: window.csrfToken || '' };
